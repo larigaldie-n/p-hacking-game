@@ -18,12 +18,12 @@ ui <- fluidPage(theme = bslib::bs_theme(bootswatch = "darkly"),
   fluidRow(
            column(2),
            column(8, align="center",
-                  actionButton("start", "Start simulation!")),
+                  actionButton("start", "Start simulation!"), br()),
            column(2)
   ),
   hidden(span(id="start_hidden", fluidRow(
       column(4),
-      column(4, h5("Your real probability of being wrong if this test is significant at alpha<.05 is now approximately:"), verbatimTextOutput("p_value"), br()),
+      column(4, h5("Your real probability of wrongly inferring the existence of an effect if this test is significant at alpha<.05 is now approximately:"), verbatimTextOutput("p_value"), br()),
       column(4)
 
     ),
@@ -35,7 +35,7 @@ ui <- fluidPage(theme = bslib::bs_theme(bootswatch = "darkly"),
     ),
   hr(),
   fluidRow(column(1),
-           column(10, align="center", textOutput("text_add_subjects"), tags$br(), actionButton("click_add_subjects_1", "Slowly, gently: 1 more per group. I do not want to catch a uselessly tiny effect size by mistake"), br(), br(), actionButton("click_add_subjects_3", "3 more per group. Just enough to catch the effect that's clearly there"), br(), br(), actionButton("click_add_subjects_5", "Participants gallore: 5 more per group. More subjects = more power = better science")),
+           column(10, align="center", textOutput("text_add_subjects"), tags$br(), actionButton("click_add_subjects_1", "Slowly, gently: 1 more per group. I do not want to catch a uselessly tiny effect size by mistake"), br(), br(), actionButton("click_add_subjects_3", "3 more per group. Just enough to catch the effect that's clearly there"), br(), br(), actionButton("click_add_subjects_5", "Participants galore: 5 more per group. More subjects = more power = better science")),
            column(1)),
   hr(),
   fluidRow(column(1),
@@ -56,7 +56,7 @@ ui <- fluidPage(theme = bslib::bs_theme(bootswatch = "darkly"),
   hr(),
   fluidRow(column(5, align="center", actionButton("click_publish", "Publish")),
            column(2),
-           column(5, align="center", actionButton("click_perish", "Perish")))
+           column(5, align="center", actionButton("click_perish", "Perish"))),hr()
   )),
   hidden(span(id="final",
          fluidRow(column(1),
