@@ -10,7 +10,7 @@ create_dataset <- function(n_samples, n_subjects)
 
 add_subjects <- function(tib, n_add)
 {
-  tib <- tib %>% rowwise() %>% mutate(g1 = list(c(g1, rnorm(n_subjects, 15, 5))), g2 = list(c(g2, rnorm(n_subjects, 15, 5))))
+  tib <- tib %>% rowwise() %>% mutate(g1 = list(c(g1, rnorm(n_add, 15, 5))), g2 = list(c(g2, rnorm(n_add, 15, 5))))
   tib <- tib %>% rowwise() %>% mutate(p = t.test(g1, g2)[['p.value']])
   tib <- tib %>% filter(p>.05)
   return(tib)
