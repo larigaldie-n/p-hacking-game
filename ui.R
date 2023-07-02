@@ -23,13 +23,13 @@ ui <- fluidPage(theme = bslib::bs_theme(bootswatch = "darkly"),
   ),
   hidden(span(id="start_hidden", fluidRow(
       column(4),
-      column(4, h5("Your real probability of wrongly inferring the existence of an effect if this test is significant at alpha<.05 is now approximately:"), verbatimTextOutput("p_value"), br()),
+      column(4, align="center", h5("Game instructions:"), p("This rather silly game requires you to imagine that you just performed a t-test, and come up with an imaginary p-value. You can choose from a number of common statistical practices, and image every time that you performed another t-test, and therefore obtained another p-value of your choice. You can keep going for as long as you decide that you did not obtain p<.05. At any moment, you can scroll down to see how your choices influenced your probability of finding a statistical effect given that there was none.", style="color: lightblue"), br()),
       column(4)
 
     ),
     fluidRow(
       column(4),
-      column(4, align="center", h3("Your t-test was not significant? No problem!"), br(), h4("Just pick as many scientific rationales as you wish from this list of inner dialogues:")),
+      column(4, align="center", h3("Your latest t-test was not significant? No problem!"), br(), h4("Just pick a scientific rationale from the following list of inner dialogues!")),
       column(4)
 
     ),
@@ -47,9 +47,15 @@ ui <- fluidPage(theme = bslib::bs_theme(bootswatch = "darkly"),
            column(1)),
   hr(),
   fluidRow(column(1),
-           column(10, align="center", textOutput("text_new_dataset"), tags$br(), actionButton("click_new_dataset", "That is an indisputable argument, let us proceed")),
+           column(10, align="center", textOutput("text_new_dataset"), tags$br(), actionButton("click_new_dataset", "That is an indisputably good argument, let us proceed")),
            column(1)),
   hr(),
+  fluidRow(
+    column(4),
+    column(4, align="center", h5("Your real probability of wrongly inferring the existence of an effect if this test is significant at alpha<.05 is now approximately:"), verbatimTextOutput("p_value"), br()),
+    column(4)
+    
+  ),
   fluidRow(column(5, align="center", h2("What to report in your article"), verbatimTextOutput("methods")),
            column(2),
            column(5, align="center", h2("Statistical log"), verbatimTextOutput("log"))),
