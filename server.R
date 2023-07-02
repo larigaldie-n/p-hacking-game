@@ -14,8 +14,8 @@ server <- function(input, output, session) {
   texts_add_subjects <- c("The t-test nearly reached statistical significance, which is already quite unlikely by itself. And if there was no effect, adding a few more subjects would most likely make the p-value bigger. So there's nothing wrong with that: I'll recruit some more.")
   texts_new_dv <- c("Well, this outcome variable was never the one I was REALLY interested about. I even wonder why I bothered to include and analyze this one in the first place. Let's stop fooling around and start analyzing the real variable of interest.",
                     "Of course this outcome variable is unchanged, I could have predicted that. In fact, I know authors who arrived at this conclusion earlier, so it is exactly as if I knew that already. But I have another variable to analyze in mind and for this one I am pretty certain I have the most solid theoretical background, so I will just run another test on this one.")
-  texts_new_dataset <- c("I admit it, the instructions to participants were not very clear. I probably would not have been able to answer correctly myself, come to think of it. I will change the instructions and recruit another set of participants.",
-                         "I am pretty sure my control task was not good enough. I will tweak it a little bit to make sure I have a good baseline, then take another set of participants. I hope I'll get it right this time.")
+  texts_new_dataset <- c("Retrospectively, I must admit that the instructions given to participants were not very clear. I probably would not have been able to answer correctly myself, come to think of it. I will change the instructions and recruit another set of participants.",
+                         "I am pretty sure my control task was not good enough. I will tweak it a little bit to make sure I have a good baseline, then take another set of participants. I will get it right this time.")
 
   runjs('document.getElementById("click_publish").style.backgroundColor = "green";')
   runjs('document.getElementById("click_perish").style.backgroundColor = "red";')
@@ -120,7 +120,7 @@ server <- function(input, output, session) {
     hide("starting_text")
     hide("final")
     variable_number(1)
-    final_text("")
+    text_log("")
     tib(create_dataset(n_samples, n_subjects) %>% filter(p>0.05))
     randomize_texts()
     remove_modal_spinner()

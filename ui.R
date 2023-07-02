@@ -4,7 +4,7 @@ library(shinybusy)
 source("p-value-t-test.R")
 
 ui <- fluidPage(theme = bslib::bs_theme(bootswatch = "darkly"),
-                tags$style(type='text/css', '#methods {white-space: pre-wrap;}', '#final {white-space: pre-wrap;}'),
+                tags$style(type='text/css', '#methods {white-space: pre-wrap;}', '#final {white-space: pre-wrap;}', '#log {white-space: pre-wrap;}'),
                 useShinyjs(),
                 tags$head(tags$style("#p_value{color: red;
                                  font-size: 20px;
