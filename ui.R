@@ -23,7 +23,7 @@ ui <- fluidPage(theme = bslib::bs_theme(bootswatch = "darkly"),
   ),
   hidden(span(id="start_hidden", fluidRow(
       column(4),
-      column(4, align="center", h5("Game instructions:"), p("This rather silly game requires you to imagine that you just performed a t-test, and come up with an imaginary p-value. You can choose from a number of common statistical practices, and imagine each time that you performed another t-test granting another p-value of your choice. You can keep going for as long as you decide that you did not obtain p<.05. At any moment, you can scroll down to see how your choices influenced your probability of finding a statistical effect given that there was none (the original meaning of the alpha threshold).", style="color: lightblue"), br()),
+      column(4, align="center", h5("Game instructions:"), p("This educational game requires you to imagine that you just performed a t-test, and come up with an imaginary p-value. You can choose from a number of common statistical practices, and imagine each time that you performed another t-test granting another p-value of your choice. You can keep going for as long as you decide that you did not obtain p<.05. At any moment, you can scroll down to see how your choices influenced your probability of finding a statistical effect given that there was none (the original meaning of the alpha threshold).", style="color: lightblue"), br()),
       column(4)
 
     ),
