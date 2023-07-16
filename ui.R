@@ -52,7 +52,7 @@ ui <- fluidPage(theme = bslib::bs_theme(bootswatch = "darkly"),
   hr(),
   fluidRow(
     column(4),
-    column(4, align="center", h5("Your real probability of wrongly inferring the existence of an effect if this test is significant at alpha<.05 is now approximately:"), verbatimTextOutput("p_value"), br()),
+    column(4, align="center", h5("Your real probability of wrongly inferring the existence of an effect if your current test is significant at alpha<.05 (type I error) is now approximately:"), verbatimTextOutput("p_value"), br()),
     column(4)
     
   ),

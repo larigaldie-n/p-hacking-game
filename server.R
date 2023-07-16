@@ -8,7 +8,7 @@ server <- function(input, output, session) {
   final_text <- reactiveVal("")
   text_final <- reactive({final_text()})
   output$text_intro_1 <- renderText("You just gathered a dataset for a study. 60 participants were randomly and evenly assigned to one of two groups - one control, and one experimental (30/group). You also arranged to get as many outcome variables as you could. You proudly recall from your statistics courses that the correct test to do when comparing the means of 2 groups of participants on a single numerical outcome variable is an independent t-test.")
-  output$text_intro_2 <- renderText("You take your first outcome of interest and, with a combination of trepidation and excitement, you fun a first independent t-test and start looking for p<.05...")
+  output$text_intro_2 <- renderText("You take your first outcome of interest and, with a combination of trepidation and excitement, you run a first independent t-test and start hunting for p<.05...")
 
   texts_remove_outliers <- c("To be honest, some of those data points are really weird after close examination. Now that I really think about it, such extreme values are almost impossible. Subjects most likely misunderstood the task or were distracted. Keeping them that would be un-scientific, really",
                              "I distinctly remember that some participants were not very attentive during the study. I did not remove them then, but it seems obvious that they are outliers that need to be removed. Otherwise, my analysis would be biased.")
