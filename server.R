@@ -122,6 +122,7 @@ server <- function(input, output, session) {
     hide("final")
     variable_number(1)
     text_log("")
+    n_subjects_methods(n_subjects)
     tib(create_dataset(n_samples, n_subjects, initial_alpha))
     randomize_texts()
     remove_modal_spinner()
